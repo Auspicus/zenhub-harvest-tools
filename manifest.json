@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Zenhub & Harvest Tools",
+  "description": "Making Zenhub and Harvest better",
+  "version": "1.2",
+  "icons": {"16": "icon16.png", "48": "icon48.png", "128": "icon128.png"},
+  "background":{
+      "scripts": [
+        "jquery.js",
+        "bluebird.js",
+        "background.js"
+      ]
+  },
+  "web_accessible_resources": [
+    "buttons/button-lg.html",
+    "buttons/button-sm.html"
+  ],
+  "content_scripts": [ {
+    "js": ["bluebird.js", "jquery.js", "content_script.js"],
+    "matches": [ "https://github.com/*", "https://www.github.com/*"]
+  } ],
+  "permissions": [
+    "identity",
+	  "https://github.com/*",
+    "https://*.harvestapp.com/*"
+  ]
+}
