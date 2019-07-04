@@ -89,9 +89,10 @@ class ZenhubHarvestTools {
     window.addEventListener('message', (e) => {
       if (e.data.type === 'frame:close')
         this.closeTracker();
+      if (e.data.type === 'frame:resize') {
+        $(frame).css('height', e.data.value)
+      }
     })
-    $(frame).css('height', 345);
-    $(frame).css('width', 500);
     overlay.appendChild(frame);
   }
 
